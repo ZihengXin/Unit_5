@@ -7,10 +7,12 @@ public class Truck {
 
     private static final double CAPACITY = 20;
     private static double totalFuel;
+
     public Truck(String name){
         truckID = name;
     }
-    public Truck(double odo,double m,double fue){
+    public Truck(String name,double odo,double m,double fue){
+        truckID = name;
         odometer = odo;
         mpg = m;
         fuel = fue;
@@ -30,9 +32,10 @@ public class Truck {
     public void setMpg(double mpg){
         this.mpg = mpg;
     }
+
     public boolean enoughFuel(double num){
         double requirement = num/mpg;
-        if(fuel<requirement){
+        if(fuel < requirement){
             return false;
         }
         else{
@@ -40,8 +43,36 @@ public class Truck {
         }
     }
     public String drive(double pastMiles){
-        odometer += pastMiles;
-        fuel -= pastMiles/mpg;
-        if(){
+        if(enoughFuel(pastMiles)){
+            odometer += pastMiles;
+            fuel -= pastMiles/mpg;
+            return "success";
+        }else{
+            return "Truck " + truckID + " does not have enough fuel to drive 500.0 miles.";
+        }
+    }
+
+    public  void fill(){
+        totalFuel += (CAPACITY-fuel);
+        fuel = 20;
+    }
+
+    public  String fill(double g){
+
+        if(totalFuel <= 20){
+            fuel += g;
+            totalFuel += g;
+            return "success";
+        }else{
+            return "Truck " + truckID + ": Gallons exceeds tank capacity";
+        }
+    }
+    public static double getTotalFuel() {
+        return totalFuel;
+    }
+
+    public String toString() {
+        return "Truck: " + truckID + "\nOdometer: " + odometer + "\nMiles Per Gallon: " + mpg+"\nFuel: " + fuel;
     }
 }
+
