@@ -54,12 +54,12 @@ public class Truck {
 
     public  void fill(){
         totalFuel += (CAPACITY-fuel);
-        fuel = 20;
+        fuel = CAPACITY;
     }
 
     public  String fill(double g){
 
-        if(totalFuel <= 20){
+        if(fuel + g <= CAPACITY){
             fuel += g;
             totalFuel += g;
             return "success";
