@@ -7,9 +7,6 @@
     public class Fraction {
         /**
          * initialize variable
-         *
-         * @param numerator
-         * @param denominator
          */
         private int numerator;
         private int denominator;
@@ -33,7 +30,6 @@
                 numerator *= -1;
             } else if (denominator < 0 && numerator < 0)
                 denominator *= -1;
-
         }
 
         /**
@@ -58,7 +54,6 @@
             }
             return n;
         }
-
         /**
          * reduce the given fraction
          *
@@ -68,10 +63,8 @@
          */
         private static int reduce(int numerator, int denominator) {
             int commonDivider = gcd(numerator, denominator);
-
             return commonDivider;
         }
-
         /**
          * Multiplies the denominators and numerators by the opposite denominators then adds them and reduce
          *
@@ -92,7 +85,6 @@
                 newDenominator *= -1;
             return new Fraction(newNumerator, newDenominator);
         }
-
         /**
          * Multiplies the denominators and the numerators by the opposite denominators then adds them and reduce
          *
@@ -133,7 +125,6 @@
                 newDenominator *= -1;
             return new Fraction(newNumerator, newDenominator);
         }
-
         /**
          * Multiplies numerators and denominators, and reduce them
          * @param a fraction one
@@ -148,13 +139,11 @@
             newNumerator /= num;
             return new Fraction(newNumerator, newDenominator);
         }
-
         /**
          *
          * @return the assign output
          */
         public String toString(){
-
             if(denominator < 0 && numerator > 0) {
                 denominator *= -1;
                 numerator *= -1;
