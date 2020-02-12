@@ -1,6 +1,6 @@
 
     /**
-     * This class accounts for fractions, including a constructor, a default constructor, and methods to do Fraction calculations (+.-,*,/)
+     * This code is able to do calculations between fractions. Including(+.-,*,/).The result should be in reduced form.
      * @author Charly Xin
      * @since February 11, 2020
      */
@@ -12,7 +12,7 @@
         private int denominator;
 
         /**
-         * The first constructor makes a fraction with a given numerator and denominator given by user, check negatives and simplifies
+         * Constructor creating a fraction with given numerators and denominators. It also check negative and simplify.
          *
          * @param numerator
          * @param denominator
@@ -33,7 +33,7 @@
         }
 
         /**
-         * the initialized fraction 1/1
+         * Constructor. The initialized fraction 1/1
          */
         public Fraction() {
             this(1,1);
