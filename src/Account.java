@@ -1,4 +1,4 @@
-//2020.2.7 Charly. This program should be able to pass the Account Test. 
+//2020.2.7 Charly. This program should be able to pass the Account Test.
 public class Account {
     private String first;
     private String last;
